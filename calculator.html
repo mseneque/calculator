@@ -1,0 +1,33 @@
+<!-- Next Steps
+will have to create the history variable to store the 
+previous resulats at each point in the calculation.
+I'm think that I will serialise the data to json string, then deserialise.
+this is to remove the data linking data referencing issues. -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text Based Calculator</title>
+    <script src="./calculator.js"></script>
+</head>
+<body>
+    <form>
+        <input id="formulaInput" type="text" name="formula" value="1+1" />
+        <input id="calculate" type="button" name="calculate" value="calculate"/>
+    </form>
+    <p id='formula'></p>
+    <p id='histInput'></p>
+    <table>
+        <tr>
+            <td id="inputStack"></td>
+            <td id="preorderStack"></td>
+            <td id="answerStack"></td>
+        </tr>
+    </table>
+    <script>
+        var formula = document.getElementById('formulaInput')
+        console.log(formula)
+        document.getElementById('calculate').onclick = function() { doCalculation(formula); }
+    </script>
+</body>
+</html>
